@@ -3,8 +3,17 @@
     "autoload": {
         "psr-4": {
             "Asus\\BaiTapGit\\": "src/"
-        }
+        },
+        "files": [
+            "helper.php"
+        ]
     },
+    "authors": [
+        {
+            "name": "Trương Thái Tú",
+            "email": "tuttph45304@gmail.com"
+        }
+    ],
     "require": {
         "bramus/router": "^1.6",
         "eftec/bladeone": "^4.13",

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+ <meta charset="utf-8">
+ <title>Reader | Hugo Personal Blog Template</title>
+
+ 
+
+ <!-- plugins -->
+ <?php echo $this->runChild('layouts.partials.headed'); ?>
+
+ 
+</head>
+
+<body>
+ <?php echo $this->runChild('layouts.partials.topbar'); ?>
+
+ <div class="container">
+ <?php echo $this->yieldContent('content'); ?>
+ </div>
+
+ <?php echo $this->runChild('layouts.partials.footer'); ?>
+
+
+ <?php echo $this->runChild('layouts.partials.js'); ?>
+</body>
+
+</html>
