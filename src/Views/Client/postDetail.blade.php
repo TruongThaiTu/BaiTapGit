@@ -7,22 +7,24 @@
 @section('post-detail')
     <div class="row justify-content-center">
         <div class=" col-lg-9   mb-5 mb-lg-0">
+            @foreach ($products as $item)
+                
             <article>
                 <div class="post-slider mb-4">
-                    <img src="{{ asset('assets/client/client/images/post/post-2.jpg') }}" class="card-img" alt="post-thumb">
+                    <img src="{{ url($item['img_thumbnail']) }}" class="card-img" alt="post-thumb">
                 </div>
 
-                <h1 class="h2">Customer Engage Marketing Marketing Strategy to Economy Structure Everyone.
+                <h1 class="h2">{{ $item['name'] }}
                 </h1>
                 <ul class="card-meta my-3 list-inline">
                     <li class="list-inline-item">
                         <a href="author-single.html" class="card-meta-author">
-                            <img src="{{ asset('assets/client/client/images/john-doe.jpg') }}">
-                            <span>Charls Xaviar</span>
+                            <img src="{{ url($item['img_thumbnail']) }}">
+                            <span>{{ $item['name'] }}</span>
                         </a>
                     </li>
                     <li class="list-inline-item">
-                        <i class="ti-timer"></i>2 Min To Read
+                        <i class="ti-timer"></i>{{ $item['created_at'] }}
                     </li>
                     <li class="list-inline-item">
                         <i class="ti-calendar"></i>14 jan, 2020
@@ -68,20 +70,21 @@
                         tricky. So, this article looks at</p>
                 </div>
             </article>
+            @endforeach
 
         </div>
 
         <div class="col-lg-9 col-md-12">
             <div class="mb-5 border-top mt-4 pt-5">
                 <h3 class="mb-4">Comments</h3>
-
+                @foreach ($products as $item)
                 <div class="media d-block d-sm-flex mb-4 pb-4">
                     <a class="d-inline-block mr-2 mb-3 mb-md-0" href="#">
                         <img src="{{ asset('assets/client/client/images/post/user-01.jpg') }}" class="mr-3 rounded-circle"
                             alt="">
                     </a>
                     <div class="media-body">
-                        <a href="#!" class="h4 d-inline-block mb-3">Alexender Grahambel</a>
+                        <a href="#!" class="h4 d-inline-block mb-3">{{ $item['name'] }}</a>
 
                         <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
                             sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
@@ -99,7 +102,7 @@
                                 class="mr-3 rounded-circle" alt=""></a>
                     </div>
                     <div class="media-body">
-                        <a href="#!" class="h4 d-inline-block mb-3">Nadia Sultana Tisa</a>
+                        <a href="#!" class="h4 d-inline-block mb-3">{{ $item['name'] }}</a>
 
                         <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
                             sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
@@ -110,6 +113,7 @@
                         <a class="text-primary font-weight-600" href="#!">Reply</a>
                     </div>
                 </div>
+                @endforeach
             </div>
 
             <div>

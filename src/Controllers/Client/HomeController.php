@@ -15,7 +15,7 @@ class HomeController extends Controller
     }
     public function index() {
         // $name = 'TUTTPH45304';
-        $product = $this->product->all();
+        $product = $this->product->one();
         // Helper::debug($product);
 
         $this->renderViewClient('home', [

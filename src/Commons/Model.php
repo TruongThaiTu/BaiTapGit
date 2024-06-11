@@ -38,6 +38,15 @@ class Model
         ->fetchAllAssociative();
     }
 
+    public function one()
+    {
+        return $this->queryBuilder
+        ->select('*')
+        ->from($this->tableName)
+        ->orderBy('id', 'desc')
+        ->fetchOne();
+    }
+
     public function count()
     {
         return $this->queryBuilder

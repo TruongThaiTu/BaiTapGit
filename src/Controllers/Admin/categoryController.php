@@ -3,18 +3,20 @@
 namespace Asus\BaiTapGit\Controllers\Admin;
 
 use Asus\BaiTapGit\Commons\Controller;
+use Asus\BaiTapGit\Commons\Helper;
 use Asus\BaiTapGit\Models\category;
 use Rakit\Validation\Validator;
+
 
 class categoryController extends Controller
 {
     private category $category;
 
+
     public function __construct()
     {
         $this->category = new category();
     }
-
     public function index()
     {
         $category = $this->category->all();
@@ -52,7 +54,7 @@ class categoryController extends Controller
             $_SESSION['status'] = true;
             $_SESSION['msg'] = 'Thao tác thành công';
 
-            header('Location: ' . url('admin/category'));
+            header('Location: ' . url('admin/categoryes'));
             exit;
         }
     }
@@ -119,4 +121,6 @@ class categoryController extends Controller
         header('Location: ' . url('admin/categoryes'));
         exit();
     }
+
+    
 }
